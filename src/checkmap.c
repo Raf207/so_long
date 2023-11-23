@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:26:13 by rafnasci          #+#    #+#             */
-/*   Updated: 2023/11/23 17:30:36 by rafnasci         ###   ########.fr       */
+/*   Updated: 2023/11/23 18:23:02 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int	ft_checkmap(char *file, t_map *map)
 		free(line);
 		line = get_next_line(fd);
 	}
-	if (line && !ft_checkline(line, map) || map->height == map->width 
+	if ((line && !ft_checkline(line, map)) || map->height == map->width 
 		|| map->borders != 2 || map->player != 1 || map->exit != 1
 		|| map->collectible < 1 || map->last_border != map->height)
 	{
