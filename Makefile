@@ -14,7 +14,7 @@ SRC_DIR = src/
 
 OBJ_DIR = obj/
 
-SRC_FILES = display my_printf utils display_point
+SRC_FILES = main checkmap
 
 OBJ = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 
@@ -34,7 +34,7 @@ $(NAME)	: $(OBJ)
 	@cp libft/libft.a .
 	@mv libft.a $(NAME)
 	@$(AR) $(NAME) $(OBJ)
-	@echo "my_printf compiled!"
+	@echo "so_long compiled!"
 
 clean :
 	$(RM) $(OBJ_DIR)

@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 18:05:43 by rafnasci          #+#    #+#             */
-/*   Updated: 2023/10/18 16:12:53 by rafnasci         ###   ########.fr       */
+/*   Updated: 2023/11/23 11:32:37 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	ft_chartrim(char c, const char *set)
 	return (0);
 }
 
-static int	ft_countlen(const char *s1, const char *set)
+static int	ft_countlens(const char *s1, const char *set)
 {
 	int	i;
 	int	tot_char_trim;
@@ -62,7 +62,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1)
 		return (NULL);
-	tot_len = ft_countlen(s1, set) + 1;
+	tot_len = ft_countlens(s1, set) + 1;
 	rep = ft_calloc(tot_len, sizeof(char));
 	if (!rep)
 		return (NULL);
