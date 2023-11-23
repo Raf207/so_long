@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:36:56 by rafnasci          #+#    #+#             */
-/*   Updated: 2023/11/23 13:35:57 by rafnasci         ###   ########.fr       */
+/*   Updated: 2023/11/23 18:15:27 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,19 @@ typedef struct s_map
 	int	player;
 	int	last_border;
 	int	borders;
+	int	p_x;
+	int	p_y;
 }	t_map;
 
 int		ft_checkfile(char *file);
 int		ft_checkmap(char *file, t_map *map);
 int		ft_checkline(char *line, t_map *map);
+int		ft_checkborders(char *line, t_map *map);
+void	ft_initmap(t_map *map, char *line);
+int		ft_checkpath(char *file, t_map *map);
+int		ft_backtrack(int x, int y, t_map *map, char **plan);
+void	ft_initmap(t_map *map, char *line);
+int		ft_checkborders(char *line, t_map *map);
 int		main(int argc, char **argv);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:38:21 by rafnasci          #+#    #+#             */
-/*   Updated: 2023/11/23 13:17:17 by rafnasci         ###   ########.fr       */
+/*   Updated: 2023/11/23 18:18:28 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,14 @@ int	main(int argc, char **argv)
 	{
 		if (ft_checkfile(argv[1]) && ft_checkmap(argv[1], &map))
 		{
-			printf("yeye");
+			if (!ft_checkpath(argv[1], &map))
+			{
+				perror("Error\nNo correct path found");
+				exit(EXIT_FAILURE);
+			}
 		}
 		else
 			printf("nono");
 	}
+	return (0);
 }

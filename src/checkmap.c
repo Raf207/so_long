@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:26:13 by rafnasci          #+#    #+#             */
-/*   Updated: 2023/11/23 15:42:36 by rafnasci         ###   ########.fr       */
+/*   Updated: 2023/11/23 17:30:36 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	ft_initmap(t_map *map, char *line)
 	map->exit = 0;
 	map->player = 0;
 	map->borders = 0;
+	map->p_x = -1;
+	map->p_y = -1;
 }
 
 int	ft_checkline(char *line, t_map *map)

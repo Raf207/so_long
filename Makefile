@@ -14,7 +14,7 @@ SRC_DIR = src/
 
 OBJ_DIR = obj/
 
-SRC_FILES = main checkmap
+SRC_FILES = main checkmap checkpath
 
 OBJ = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 
