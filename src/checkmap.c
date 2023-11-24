@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:26:13 by rafnasci          #+#    #+#             */
-/*   Updated: 2023/11/23 18:23:02 by rafnasci         ###   ########.fr       */
+/*   Updated: 2023/11/24 15:06:09 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,18 @@ int	ft_checkborders(char *line, t_map *map)
 
 	i = -1;
 	while (++i < map->width)
+	{
 		if (line[i] != '1')
-			return (1);
+		{
+			if (map->height == 0)
+				return (1);
+			else
+				return (0);
+		}
+	}
 	if (map->height == 0)
 		return (0);
-	map->last_border = map->height;
+	map->last_border = map->height + 1;
 	return (0);
 }
 
@@ -41,16 +48,16 @@ void	ft_initmap(t_map *map, char *line)
 
 int	ft_checkline(char *line, t_map *map)
 {
-	size_t	i;
-	size_t	check;
+	int	i;
+	int	check;
 
-	if ((line[0] != '1' && line[ft_strlen(line) - 1] != '1') 
-		|| ((int) ft_strlen(line) != map->width)
-		|| ft_checkborders(line, map))
+	if (ft_checkborders(line, map) 
+		|| ((int)(ft_strlen(line)) != map->width)
+		|| (line[0] != '1' || line[map->width - 1] != '1'))
 		return (0);
 	i = -1;
 	check = 0;
-	while (++i < ft_strlen(line))
+	while (++i < map->width)
 	{
 		if (line[i] == 'C')
 			map->collectible += 1;
@@ -63,7 +70,7 @@ int	ft_checkline(char *line, t_map *map)
 		else if (line[i] != '0')
 			return (0);
 	}
-	if (check == ft_strlen(line))
+	if (check == map->width)
 		map->borders += 1;
 	return (1);
 }
@@ -88,7 +95,7 @@ int	ft_checkmap(char *file, t_map *map)
 		line = get_next_line(fd);
 	}
 	if ((line && !ft_checkline(line, map)) || map->height == map->width 
-		|| map->borders != 2 || map->player != 1 || map->exit != 1
+		|| map->borders < 2 || map->player != 1 || map->exit != 1
 		|| map->collectible < 1 || map->last_border != map->height)
 	{
 		perror("Error\nInvalid map");

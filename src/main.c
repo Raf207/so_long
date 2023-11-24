@@ -6,20 +6,24 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:38:21 by rafnasci          #+#    #+#             */
-/*   Updated: 2023/11/23 18:18:28 by rafnasci         ###   ########.fr       */
+/*   Updated: 2023/11/24 15:38:07 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 #include "../libft/include/libft.h"
 
 int	ft_checkfile(char *file)
 {
-	if (((ft_strlen(file) - 1) == 'r') && ((ft_strlen(file) - 2) == 'r')
-		&& ((ft_strlen(file) - 3) == 'b') && ((ft_strlen(file) - 4) == '.'))
+	if ((file[ft_strlen(file) - 1] == 'r') && (file[ft_strlen(file) - 2] == 'e')
+		&& (file[ft_strlen(file) - 3] == 'b')
+		&& (file[ft_strlen(file) - 4] == '.'))
 		return (1);
 	else 
+	{
 		perror("Wrong type of file");
+		exit(EXIT_FAILURE);
+	}
 	return (0);
 }
 
@@ -37,8 +41,6 @@ int	main(int argc, char **argv)
 				exit(EXIT_FAILURE);
 			}
 		}
-		else
-			printf("nono");
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 15:18:38 by rafnasci          #+#    #+#             */
-/*   Updated: 2023/11/24 13:09:23 by rafnasci         ###   ########.fr       */
+/*   Updated: 2023/11/24 14:28:21 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_copyline(char *str, t_gnllist *list)
 			str[j++] = list->content[i];
 			if (list->content[i] == '\n')
 			{
-				str[j] = '\0';
+				str[--j] = '\0';
 				return ;
 			}
 		}
@@ -42,7 +42,7 @@ char	*ft_getline(t_gnllist	*list)
 	int		len_line;
 	char	*new_line;
 
-	len_line = ft_countlen(list);
+	len_line = ft_countlen(list) - 1;
 	new_line = malloc (sizeof(char) * (len_line + 1));
 	if (!new_line)
 		return (NULL);

@@ -1,4 +1,4 @@
-NAME = so_long
+NAME = so_long.a
 
 LIBFT = libft
 

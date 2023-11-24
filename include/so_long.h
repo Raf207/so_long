@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:36:56 by rafnasci          #+#    #+#             */
-/*   Updated: 2023/11/23 18:15:27 by rafnasci         ###   ########.fr       */
+/*   Updated: 2023/11/24 15:53:37 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int		ft_checkpath(char *file, t_map *map);
 int		ft_backtrack(int x, int y, t_map *map, char **plan);
 void	ft_initmap(t_map *map, char *line);
 int		ft_checkborders(char *line, t_map *map);
+int		ft_findplayer(char **plan, t_map *map);
 int		main(int argc, char **argv);
 
 #endif
