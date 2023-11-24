@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 15:54:24 by rafnasci          #+#    #+#             */
-/*   Updated: 2023/11/24 15:56:23 by rafnasci         ###   ########.fr       */
+/*   Updated: 2023/11/24 16:29:28 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,7 @@ int	ft_checkpath(char *file, t_map *map)
 	else
 	{
 		ft_freeplan(plan);
+		perror("Error\nNo correct path found.");
 		return (0);
 	}
 }
