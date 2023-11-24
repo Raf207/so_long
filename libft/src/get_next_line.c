@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 15:18:38 by rafnasci          #+#    #+#             */
-/*   Updated: 2023/11/22 14:26:56 by rafnasci         ###   ########.fr       */
+/*   Updated: 2023/11/24 13:09:23 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_copyline(char *str, t_list *list)
+void	ft_copyline(char *str, t_gnllist *list)
 {
 	int	i;
 	int	j;
@@ -37,7 +37,7 @@ void	ft_copyline(char *str, t_list *list)
 	str[j] = '\0';
 }
 
-char	*ft_getline(t_list	*list)
+char	*ft_getline(t_gnllist	*list)
 {
 	int		len_line;
 	char	*new_line;
@@ -50,7 +50,7 @@ char	*ft_getline(t_list	*list)
 	return (new_line);
 }
 
-int	ft_find_nl(t_list *list)
+int	ft_find_nl(t_gnllist *list)
 {
 	int	i;
 
@@ -67,7 +67,7 @@ int	ft_find_nl(t_list *list)
 	return (0);
 }
 
-int	ft_createlist(t_list **list, int fd)
+int	ft_createlist(t_gnllist **list, int fd)
 {
 	char	*buffer;
 	int		counter;
@@ -88,9 +88,9 @@ int	ft_createlist(t_list **list, int fd)
 
 char	*get_next_line(int fd)
 {
-	static t_list	*list[4096];
-	char			*str;
-	char			*last;
+	static t_gnllist	*list[4096];
+	char				*str;
+	char				*last;
 
 	if (fd < 0 || fd > 4096 || read(fd, 0, 0) < 0 || BUFFER_SIZE < 0)
 		return (ft_cleanlist(&list[fd], NULL), NULL);

@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 15:37:33 by rafnasci          #+#    #+#             */
-/*   Updated: 2023/11/22 14:27:11 by rafnasci         ###   ########.fr       */
+/*   Updated: 2023/11/24 13:13:07 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_cleanlist(t_list **list, char *last)
+void	ft_cleanlist(t_gnllist **list, char *last)
 {
-	t_list	*new_node;
-	t_list	*temp_node;
+	t_gnllist	*new_node;
+	t_gnllist	*temp_node;
 
 	if (!(*list))
 		return ;
@@ -29,7 +29,7 @@ void	ft_cleanlist(t_list **list, char *last)
 	*list = NULL;
 	if (!last)
 		return ;
-	new_node = malloc (sizeof(t_list));
+	new_node = malloc (sizeof(t_gnllist));
 	if (!new_node)
 		return (free(last));
 	new_node->next = NULL;
@@ -37,12 +37,12 @@ void	ft_cleanlist(t_list **list, char *last)
 	*list = new_node;
 }
 
-char	*ft_lastpart(t_list *list)
+char	*ft_lastpart(t_gnllist *list)
 {
-	int		i;
-	int		len;
-	char	*last_part;
-	t_list	*last_node;
+	int			i;
+	int			len;
+	char		*last_part;
+	t_gnllist	*last_node;
 
 	last_node = ft_lastnode(list);
 	i = 0;
@@ -60,7 +60,7 @@ char	*ft_lastpart(t_list *list)
 	return (last_part);
 }
 
-t_list	*ft_lastnode(t_list *list)
+t_gnllist	*ft_lastnode(t_gnllist *list)
 {
 	if (!list)
 		return (NULL);
@@ -69,12 +69,12 @@ t_list	*ft_lastnode(t_list *list)
 	return (list);
 }
 
-void	ft_addlist(t_list **list, char *str)
+void	ft_addlist(t_gnllist **list, char *str)
 {
-	t_list	*last_node;
-	t_list	*new_node;
+	t_gnllist	*last_node;
+	t_gnllist	*new_node;
 
-	new_node = (t_list *) malloc (sizeof(t_list));
+	new_node = (t_gnllist *) malloc (sizeof(t_gnllist));
 	if (!new_node)
 		return (free(str));
 	last_node = ft_lastnode(*list);
@@ -86,7 +86,7 @@ void	ft_addlist(t_list **list, char *str)
 	new_node->next = NULL;
 }
 
-int	ft_countlen(t_list *list)
+int	ft_countlen(t_gnllist *list)
 {
 	int	tot_len;
 	int	i;

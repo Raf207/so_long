@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 13:28:15 by rafnasci          #+#    #+#             */
-/*   Updated: 2023/11/23 11:31:03 by rafnasci         ###   ########.fr       */
+/*   Updated: 2023/11/24 13:14:10 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+
+typedef struct s_gnllist
+{
+	char				*content;
+	struct s_gnllist	*next;
+}	t_gnllist;
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -71,15 +77,15 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char	*get_next_line(int fd);
-int		ft_createlist(t_list **list, int fd);
-t_list	*ft_lastnode(t_list *list);
-void	ft_addlist(t_list **list, char *str);
-int		ft_find_nl(t_list *list);
-char	*ft_getline(t_list	*list);
-int		ft_countlen(t_list *list);
-void	ft_copyline(char *str, t_list *list);
-char	*ft_lastpart(t_list *list);
-void	ft_cleanlist(t_list **list, char *last);
+int		ft_createlist(t_gnllist **list, int fd);
+t_gnllist	*ft_lastnode(t_gnllist *list);
+void	ft_addlist(t_gnllist **list, char *str);
+int		ft_find_nl(t_gnllist *list);
+char	*ft_getline(t_gnllist	*list);
+int		ft_countlen(t_gnllist *list);
+void	ft_copyline(char *str, t_gnllist *list);
+char	*ft_lastpart(t_gnllist *list);
+void	ft_cleanlist(t_gnllist **list, char *last);
 
 
 #endif
