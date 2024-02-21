@@ -1,10 +1,14 @@
-NAME = so_long.a
+NAME = so_long
+
+LIBNAME = so_long.a
 
 LIBFT = libft
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
+
+MINIFLAGS = -lmlx -framework OpenGL -framework AppKit
 
 AR = ar -rcs
 
@@ -14,7 +18,7 @@ SRC_DIR = src/
 
 OBJ_DIR = obj/
 
-SRC_FILES = main checkmap checkpath
+SRC_FILES = main checkmap checkpath openwindow init display loop checkmove
 
 OBJ = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 
@@ -24,16 +28,20 @@ HEAD = ./include/
 
 all : $(NAME)
 
+$(NAME) : $(LIBNAME)
+	$(CC) $(CFLAGS) $(MINIFLAGS) $(LIBNAME) -o $(NAME)
+
 $(OBJ_DIR)%.o : $(SRC_DIR)%.c
 	@mkdir -p $(OBJ_DIR)
 	@echo "Compiling: $<"
 	@$(CC) $(CFLAGS) -I $(HEAD) -c $< -o $@
 
-$(NAME)	: $(OBJ)
+$(LIBNAME)	: $(OBJ)
 	@make -C $(LIBFT)
 	@cp libft/libft.a .
-	@mv libft.a $(NAME)
-	@$(AR) $(NAME) $(OBJ)
+	@rm libft/libft.a
+	@mv libft.a $(LIBNAME)
+	@$(AR) $(LIBNAME) $(OBJ)
 	@echo "so_long compiled!"
 
 clean :
@@ -42,6 +50,6 @@ clean :
 
 fclean : clean
 	$(RM) $(NAME)
-	$(RM) $(LIBFT)/libft.a
+	$(RM) $(LIBNAME)
 
 re : fclean all

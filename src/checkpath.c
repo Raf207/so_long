@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 15:54:24 by rafnasci          #+#    #+#             */
-/*   Updated: 2023/11/24 16:29:28 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/02/21 18:34:14 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ int	ft_findplayer(char **plan, t_map *map)
 		{
 			if (plan[y][x] == 'P')
 			{
-				map->p_x = x;
-				map->p_y = y;
+				map->p_pos[0] = x;
+				map->p_pos[1] = y;
 				return (1);
 			}
 		}
@@ -94,21 +94,22 @@ int	ft_backtrack(int x, int y, t_map *map, char **plan)
 
 int	ft_checkpath(char *file, t_map *map)
 {
-	char	**plan;
-
-	plan = ft_createplan(file, map);
-	if (!plan)
+	map->plan = ft_createplan(file, map);
+	if (!map->plan)
 	{
 		perror("Error\nMemory allocation failed");
 		exit(EXIT_FAILURE);
 	}
-	if (ft_findplayer(plan, map) && ft_backtrack(map->p_x, map->p_y, map, plan))
+	if (ft_findplayer(map->plan, map) 
+		&& ft_backtrack(map->p_pos[0], map->p_pos[1], map, map->plan))
 	{
+		free(map->plan);
+		map->plan = ft_createplan(file, map);
 		return (1);
 	}
 	else
 	{
-		ft_freeplan(plan);
+		ft_freeplan(map->plan);
 		perror("Error\nNo correct path found.");
 		return (0);
 	}

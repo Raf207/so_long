@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:38:21 by rafnasci          #+#    #+#             */
-/*   Updated: 2023/11/24 16:30:30 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/02/21 13:07:45 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ int	ft_checkfile(char *file)
 
 int	main(int argc, char **argv)
 {
-	t_map	map;
+	t_game	game;
 
 	if (argc == 2)
 	{
-		if (ft_checkfile(argv[1]) && ft_checkmap(argv[1], &map)
-			&& ft_checkpath(argv[1], &map))
+		if (ft_checkfile(argv[1]) && ft_checkmap(argv[1], &game.map)
+			&& ft_checkpath(argv[1], &game.map))
 		{
-			printf("yee");
+			ft_createwin(&game);
 		}
 	}
 	return (0);

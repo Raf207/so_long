@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:36:56 by rafnasci          #+#    #+#             */
-/*   Updated: 2023/11/24 15:53:37 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/02/21 20:46:27 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,50 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <mlx.h>
+# include "../libft/include/libft.h"
 
 typedef struct s_map
 {
-	int	height;
-	int	width;
-	int	collectible;
-	int	exit;
-	int	player;
-	int	last_border;
-	int	borders;
-	int	p_x;
-	int	p_y;
+	char	**plan;
+	int		height;
+	int		width;
+	int		collectible;
+	int		exit;
+	int		player;
+	int		last_border;
+	int		borders;
+	int		p_pos[2];
 }	t_map;
+
+typedef struct s_player
+{
+	void	*p_front;
+	void	*p_back;
+	void	*p_left;
+	void	*p_right;
+}	t_player;
+
+typedef struct s_sprites
+{
+	void	*collectible1;
+	void	*grass;
+	void	*tree;
+	void	*exit;
+	void	*player;
+}	t_sprites;
+
+typedef struct s_ptr
+{
+	void	*mlx;
+	void	*win;
+}	t_ptr;
+
+typedef struct s_game
+{
+	t_ptr		ptr;
+	t_sprites	sprites;
+	t_map		map;
+}	t_game;
 
 int		ft_checkfile(char *file);
 int		ft_checkmap(char *file, t_map *map);
@@ -39,9 +70,17 @@ int		ft_checkborders(char *line, t_map *map);
 void	ft_initmap(t_map *map, char *line);
 int		ft_checkpath(char *file, t_map *map);
 int		ft_backtrack(int x, int y, t_map *map, char **plan);
-void	ft_initmap(t_map *map, char *line);
 int		ft_checkborders(char *line, t_map *map);
 int		ft_findplayer(char **plan, t_map *map);
 int		main(int argc, char **argv);
+void	ft_createwin(t_game *game);
+void	ft_init_ptr(t_ptr *ptr, t_map *map);
+void	ft_init_img(t_sprites *assets, t_ptr *ptr);
+void	ft_display_background(t_map *map, t_sprites *sprites, t_ptr *ptr);
+void	ft_display_map(t_map *map, t_sprites *sprites, t_ptr *ptr);
+void	ft_display_player(t_map *map, t_sprites *sprites, t_ptr *ptr);
+int		ft_displayall(t_game *game);
+int		ft_move_ok(t_map *map, int x, int y);
+int		ft_key_handler(int keycode, t_game *game);
 
 #endif
