@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:36:56 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/02/21 20:46:27 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/02/21 22:26:38 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,6 @@ void	ft_display_player(t_map *map, t_sprites *sprites, t_ptr *ptr);
 int		ft_displayall(t_game *game);
 int		ft_move_ok(t_map *map, int x, int y);
 int		ft_key_handler(int keycode, t_game *game);
+void	ft_swap(t_map *map, int keycode);
 
 #endif
