@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:36:56 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/02/25 13:07:40 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/02/25 14:11:43 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,21 +34,22 @@ typedef struct s_map
 	int		e_pos[2];
 }	t_map;
 
-typedef struct s_player
+typedef struct s_p_angle
 {
 	void	*p_front;
 	void	*p_back;
 	void	*p_left;
 	void	*p_right;
-}	t_player;
+}	t_p_angle;
 
 typedef struct s_sprites
 {
-	void	*collectibe;
-	void	*grass;
-	void	*tree;
-	void	*exit;
-	void	*player;
+	void		*collectibe;
+	void		*grass;
+	void		*tree;
+	void		*exit;
+	void		*player;
+	t_p_angle	p_angle;
 }	t_sprites;
 
 typedef struct s_ptr
@@ -91,7 +92,7 @@ void	ft_display_player(t_game *game);
 int		ft_displayall(t_game *game);
 int		ft_move_ok(t_map *map, int x, int y, t_game *game);
 int		ft_key_handler(int keycode, t_game *game);
-void	ft_swap(t_map *map, int keycode);
+void	ft_swap(t_map *map, int *pos, int i, t_sprites *sprites);
 void	ft_move(int keycode, t_game *game);
 void	ft_freeplan(char **plan);
 void	ft_destroy_img(t_game *game);

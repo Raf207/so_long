@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 13:12:53 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/02/24 18:33:21 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/02/25 13:48:06 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,15 @@ void	ft_init_img(t_sprites *assets, t_ptr *ptr)
 			"Assets/env/grass_64.xpm", &img_width, &img_height);
 	assets->tree = mlx_xpm_file_to_image(ptr->mlx,
 			"Assets/env/jungle_tree2_69x69.xpm", &img_width, &img_height);
-	assets->player = mlx_xpm_file_to_image(ptr->mlx,
-			"Assets/Pandoul/Pandoul_f_64.xpm", &img_width, &img_height);
 	assets->exit = mlx_xpm_file_to_image(ptr->mlx,
 			"Assets/env/hole.xpm", &img_width, &img_height);
+	assets->p_angle.p_back = mlx_xpm_file_to_image(ptr->mlx,
+			"Assets/Pandoul/pandoul_b.xpm", &img_width, &img_height);
+	assets->p_angle.p_front = mlx_xpm_file_to_image(ptr->mlx,
+			"Assets/Pandoul/Pandoul_f_64.xpm", &img_width, &img_height);
+	assets->p_angle.p_left = mlx_xpm_file_to_image(ptr->mlx,
+			"Assets/Pandoul/pandoul_p2.xpm", &img_width, &img_height);
+	assets->p_angle.p_right = mlx_xpm_file_to_image(ptr->mlx,
+			"Assets/Pandoul/pandoul_p1.xpm", &img_width, &img_height);
+	assets->player = assets->p_angle.p_front;
 }

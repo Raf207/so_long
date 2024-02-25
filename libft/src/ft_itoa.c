@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 16:27:07 by rafnasci          #+#    #+#             */
-/*   Updated: 2023/10/30 15:53:48 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/02/25 13:45:49 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,27 +30,6 @@ static int	ft_countdigit(long n)
 		i++;
 	}
 	return (i);
-}
-
-static char	*ft_invert(char *str)
-{
-	int		i;
-	int		len;
-	char	tmp;
-
-	i = 0;
-	len = ft_strlen(str);
-	if (str[i] == '-')
-		i++;
-	while (i < len)
-	{
-		tmp = str[i];
-		str[i] = str[len - 1];
-		str[len - 1] = tmp;
-		i++;
-		len--;
-	}
-	return (str);
 }
 
 char	*ft_itoa(int n)

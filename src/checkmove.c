@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:34:14 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/02/25 13:30:22 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/02/25 14:12:48 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,30 +27,28 @@ int	ft_move_ok(t_map *map, int y, int x, t_game *game)
 	return (1);
 }
 
-void	ft_swap(t_map *map, int keycode)
+void	ft_swap(t_map *map, int *pos, int keycode, t_sprites *sprites)
 {
+	map->plan[map->p_pos[1]][map->p_pos[0]] = '0';
 	if (keycode == 2)
 	{
-		map->plan[map->p_pos[1]][map->p_pos[0]] = '0';
-		map->p_pos[0] += 1;
-		map->plan[map->p_pos[1]][map->p_pos[0]] = 'P';
+		*pos += 1;
+		sprites->player = sprites->p_angle.p_right;
 	}
-	else if (keycode == 1)
+	if (keycode == 1)
 	{
-		map->plan[map->p_pos[1]][map->p_pos[0]] = '0';
-		map->p_pos[1] += 1;
-		map->plan[map->p_pos[1]][map->p_pos[0]] = 'P';
+		*pos += 1;
+		sprites->player = sprites->p_angle.p_front;
 	}
-	else if (keycode == 0)
+	if (keycode == 0)
 	{
-		map->plan[map->p_pos[1]][map->p_pos[0]] = '0';
-		map->p_pos[0] -= 1;
-		map->plan[map->p_pos[1]][map->p_pos[0]] = 'P';
+		*pos += -1;
+		sprites->player = sprites->p_angle.p_left;
 	}
-	else if (keycode == 13)
+	if (keycode == 13)
 	{
-		map->plan[map->p_pos[1]][map->p_pos[0]] = '0';
-		map->p_pos[1] -= 1;
-		map->plan[map->p_pos[1]][map->p_pos[0]] = 'P';
+		*pos += -1;
+		sprites->player = sprites->p_angle.p_back;
 	}
+	map->plan[map->p_pos[1]][map->p_pos[0]] = 'P';
 }
