@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 13:12:53 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/02/25 13:48:06 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/02/25 17:02:10 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_init_img(t_sprites *assets, t_ptr *ptr)
 	int			img_height;
 
 	assets->collectibe = mlx_xpm_file_to_image(ptr->mlx,
-			"Assets/bamboo/bamboo.xpm", &img_width, &img_height);
+			"Assets/bamboo/cheese.xpm", &img_width, &img_height);
 	assets->grass = mlx_xpm_file_to_image(ptr->mlx,
 			"Assets/env/grass_64.xpm", &img_width, &img_height);
 	assets->tree = mlx_xpm_file_to_image(ptr->mlx,

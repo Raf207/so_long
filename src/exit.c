@@ -6,11 +6,11 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:51:46 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/02/25 14:20:01 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/02/25 15:38:05 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../include/so_long.h"
+#include "../include/so_long.h"
 
 void	ft_destroy_img(t_game *game)
 {
@@ -18,7 +18,6 @@ void	ft_destroy_img(t_game *game)
 	mlx_destroy_image(game->ptr.mlx, game->sprites.grass);
 	mlx_destroy_image(game->ptr.mlx, game->sprites.tree);
 	mlx_destroy_image(game->ptr.mlx, game->sprites.exit);
-	mlx_destroy_image(game->ptr.mlx, game->sprites.player);
 	mlx_destroy_image(game->ptr.mlx, game->sprites.p_angle.p_back);
 	mlx_destroy_image(game->ptr.mlx, game->sprites.p_angle.p_front);
 	mlx_destroy_image(game->ptr.mlx, game->sprites.p_angle.p_right);

@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 13:13:46 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/02/25 13:10:04 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/02/25 17:05:29 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_display_map(t_game *game)
 		{
 			if (game->map.plan[nb_y][nb_x] == 'C')
 				mlx_put_image_to_window(game->ptr.mlx, game->ptr.win,
-					game->sprites.collectibe, nb_x * 64, nb_y * 64 + 20);
+					game->sprites.collectibe, nb_x * 64, nb_y * 64 - 10);
 			else if (game->map.plan[nb_y][nb_x] == '1')
 				mlx_put_image_to_window(game->ptr.mlx, game->ptr.win,
 					game->sprites.tree, nb_x * 64, nb_y * 64);
@@ -62,7 +62,7 @@ void	ft_display_player(t_game *game)
 		while (++nb_x < game->map.width)
 		{
 			if ((nb_y == game->map.e_pos[1] && nb_x == game->map.e_pos[0])
-				&& game->state.collected == 1)
+				&& game->state.completed == 1)
 				mlx_put_image_to_window(game->ptr.mlx, game->ptr.win,
 					game->sprites.exit, nb_x * 64, nb_y * 64);
 			if (nb_y == game->map.p_pos[1] && nb_x == game->map.p_pos[0])
