@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:26:13 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/02/21 18:33:19 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/02/25 13:07:26 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_checkborders(char *line, t_map *map)
 	return (0);
 }
 
-void	ft_initmap(t_map *map, char *line)
+void	ft_initmap(t_map *map, char *line, t_state *state)
 {
 	map->width = ft_strlen(line);
 	map->height = 0;
@@ -44,6 +44,9 @@ void	ft_initmap(t_map *map, char *line)
 	map->borders = 0;
 	map->p_pos[0] = -1;
 	map->p_pos[1] = -1;
+	state->collected = 0;
+	state->completed = 0;
+	state->moves = 0;
 }
 
 int	ft_checkline(char *line, t_map *map)
@@ -75,7 +78,7 @@ int	ft_checkline(char *line, t_map *map)
 	return (1);
 }
 
-int	ft_checkmap(char *file, t_map *map)
+int	ft_checkmap(char *file, t_map *map, t_state *state)
 {
 	int		fd;
 	char	*line;
@@ -87,7 +90,7 @@ int	ft_checkmap(char *file, t_map *map)
 		exit(EXIT_FAILURE);
 	}
 	line = get_next_line(fd);
-	ft_initmap(map, line);
+	ft_initmap(map, line, state);
 	while (line && ft_checkline(line, map))
 	{
 		map->height += 1;
@@ -102,4 +105,26 @@ int	ft_checkmap(char *file, t_map *map)
 		exit(EXIT_FAILURE);
 	}
 	return (1);
+}
+
+int	ft_findexit(char **plan, t_map *map)
+{
+	int	x;
+	int	y;
+
+	y = -1;
+	while (++y < map->height)
+	{
+		x = -1;
+		while (++x < map->width)
+		{
+			if (plan[y][x] == 'E')
+			{
+				map->e_pos[0] = x;
+				map->e_pos[1] = y;
+				return (1);
+			}
+		}
+	}
+	return (0);
 }

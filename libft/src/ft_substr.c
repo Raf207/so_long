@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 16:51:36 by rafnasci          #+#    #+#             */
-/*   Updated: 2023/10/30 16:20:56 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/02/25 13:09:52 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	return (dst);
 }
-
-// #include <stdio.h>
-// int main (void)
-// {
-// 	char str[] = "";
-// 	printf("rep :%s\n", ft_substr(str, 1, 1));
-// }

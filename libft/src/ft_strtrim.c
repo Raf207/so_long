@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 18:05:43 by rafnasci          #+#    #+#             */
-/*   Updated: 2023/11/23 11:32:37 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/02/25 13:09:43 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	return (rep);
 }
-
-// int main (void)
-// {
-// 	const char s1[] = "lorem ipsum dolor sit amet";
-// 	const char *set= NULL;
-// 	printf("rep :%s\n", ft_strtrim(s1, set));
-// }

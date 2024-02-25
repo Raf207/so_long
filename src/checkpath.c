@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 15:54:24 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/02/21 18:34:14 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/02/25 13:08:50 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ int	ft_checkpath(char *file, t_map *map)
 		perror("Error\nMemory allocation failed");
 		exit(EXIT_FAILURE);
 	}
+	ft_findexit(map->plan, map);
 	if (ft_findplayer(map->plan, map) 
 		&& ft_backtrack(map->p_pos[0], map->p_pos[1], map, map->plan))
 	{

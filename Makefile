@@ -18,7 +18,7 @@ SRC_DIR = src/
 
 OBJ_DIR = obj/
 
-SRC_FILES = main checkmap checkpath openwindow init display loop checkmove
+SRC_FILES = main checkmap checkpath init display hook checkmove exit
 
 OBJ = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 

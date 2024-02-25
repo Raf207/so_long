@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 17:25:54 by rafnasci          #+#    #+#             */
-/*   Updated: 2023/10/17 17:19:54 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/02/25 13:09:39 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (rep);
 }
 
-// #include <stdio.h>
-// int main (void)
-// {
-// 	char s1[] = "bonjour";
-// 	char *s2 = NULL;
-// 	printf("%s\n", ft_strjoin(s1, s2));
-// }

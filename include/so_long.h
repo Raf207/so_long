@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:36:56 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/02/21 22:26:38 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/02/25 13:07:40 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_map
 	int		last_border;
 	int		borders;
 	int		p_pos[2];
+	int		e_pos[2];
 }	t_map;
 
 typedef struct s_player
@@ -43,7 +44,7 @@ typedef struct s_player
 
 typedef struct s_sprites
 {
-	void	*collectible1;
+	void	*collectibe;
 	void	*grass;
 	void	*tree;
 	void	*exit;
@@ -56,18 +57,26 @@ typedef struct s_ptr
 	void	*win;
 }	t_ptr;
 
+typedef struct s_gamestate
+{
+	int	collected;
+	int	completed;
+	int	moves;
+}	t_state;
+
 typedef struct s_game
 {
 	t_ptr		ptr;
 	t_sprites	sprites;
 	t_map		map;
+	t_state		state;
 }	t_game;
 
 int		ft_checkfile(char *file);
-int		ft_checkmap(char *file, t_map *map);
+int		ft_checkmap(char *file, t_map *map, t_state *state);
 int		ft_checkline(char *line, t_map *map);
 int		ft_checkborders(char *line, t_map *map);
-void	ft_initmap(t_map *map, char *line);
+void	ft_initmap(t_map *map, char *line, t_state *state);
 int		ft_checkpath(char *file, t_map *map);
 int		ft_backtrack(int x, int y, t_map *map, char **plan);
 int		ft_checkborders(char *line, t_map *map);
@@ -77,11 +86,16 @@ void	ft_createwin(t_game *game);
 void	ft_init_ptr(t_ptr *ptr, t_map *map);
 void	ft_init_img(t_sprites *assets, t_ptr *ptr);
 void	ft_display_background(t_map *map, t_sprites *sprites, t_ptr *ptr);
-void	ft_display_map(t_map *map, t_sprites *sprites, t_ptr *ptr);
-void	ft_display_player(t_map *map, t_sprites *sprites, t_ptr *ptr);
+void	ft_display_map(t_game *game);
+void	ft_display_player(t_game *game);
 int		ft_displayall(t_game *game);
-int		ft_move_ok(t_map *map, int x, int y);
+int		ft_move_ok(t_map *map, int x, int y, t_game *game);
 int		ft_key_handler(int keycode, t_game *game);
 void	ft_swap(t_map *map, int keycode);
+void	ft_move(int keycode, t_game *game);
+void	ft_freeplan(char **plan);
+void	ft_destroy_img(t_game *game);
+void	ft_exit(t_game *game);
+int		ft_findexit(char **plan, t_map *map);
 
 #endif

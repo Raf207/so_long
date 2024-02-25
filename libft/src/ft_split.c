@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 14:27:58 by rafnasci          #+#    #+#             */
-/*   Updated: 2023/10/18 12:23:08 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/02/25 13:09:36 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,18 +109,3 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (rep);
 }
-
-// int	main(void)
-// {
-// 	char str[] = "je suis une bgssssss";
-// 	char c = ' ';
-// 	int i = 0;
-// 	char **rep;
-// 	(void)i;
-// 	rep = ft_split(str, c);
-// 	// while (rep[i])
-// 	// {
-// 	// 	printf("%s\n", rep[i]);
-// 	// 	i++;
-// 	// }
-// }
