@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:36:56 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/05/16 20:46:59 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/05/16 20:49:35 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,20 +135,5 @@ int		ft_loop_miaous(t_game *game);
 void	ft_init_num(t_sprites *assets, t_ptr *ptr);
 void	ft_display_num(t_game *game);
 void	ft_init_miaouss(t_sprites *assets, t_ptr *ptr);
-void	ft_print_plan(t_map *map, char **plan)
-{
-	int	i;
-	int	j;
-
-	i = -1;
-	while (++i < map->height)
-	{
-		j = -1;
-		while (++j < map->width)
-			printf("%c", plan[i][j]);
-		printf("\n");
-	}
-	printf("-----------------------\n");
-}
 
 #endif
