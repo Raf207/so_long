@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:26:13 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/02/25 15:37:26 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/05/16 16:58:40 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	ft_initmap(t_map *map, char *line, t_state *state)
 	map->width = ft_strlen(line);
 	map->height = 0;
 	map->collectible = 0;
+	map->coll_isok = 0;
 	map->exit = 0;
 	map->player = 0;
 	map->borders = 0;
@@ -47,6 +48,9 @@ void	ft_initmap(t_map *map, char *line, t_state *state)
 	state->collected = 0;
 	state->completed = 0;
 	state->moves = 0;
+	state->loop = 0;
+	state->img_col = 0;
+	state->img_col2 = 0;
 }
 
 int	ft_checkline(char *line, t_map *map)
@@ -70,7 +74,7 @@ int	ft_checkline(char *line, t_map *map)
 			map->player += 1;
 		else if (line[i] == '1')
 			check++;
-		else if (line[i] != '0')
+		else if (line[i] != '0' && line[i] != 'M')
 			return (0);
 	}
 	if (check == map->width)
@@ -86,7 +90,7 @@ int	ft_checkmap(char *file, t_map *map, t_state *state)
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
 	{
-		perror("Error\nFailed to open file");
+		ft_putstr_fd("Error\nFailed to open file\n", 2);
 		exit(EXIT_FAILURE);
 	}
 	line = get_next_line(fd);
@@ -101,7 +105,7 @@ int	ft_checkmap(char *file, t_map *map, t_state *state)
 		|| map->borders < 2 || map->player != 1 || map->exit != 1
 		|| map->collectible < 1 || map->last_border != map->height)
 	{
-		perror("Error\nInvalid map");
+		ft_putstr_fd("Error\nInvalid map\n", 2);
 		exit(EXIT_FAILURE);
 	}
 	return (1);

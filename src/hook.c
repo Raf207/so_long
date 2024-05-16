@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 12:55:47 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/02/25 14:13:29 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/02/25 17:46:57 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,5 @@ int	ft_key_handler(int keycode, t_game *game)
 		ft_move(keycode, game);
 	if (keycode == 53)
 		ft_exit(game);
-	ft_displayall(game);
 	return (0);
 }
