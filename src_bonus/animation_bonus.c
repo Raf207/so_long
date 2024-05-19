@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   animation.c                                        :+:      :+:    :+:   */
+/*   animation_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 15:46:14 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/05/19 22:08:49 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/05/20 00:17:48 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../include/so_long_bonus.h"
 
 void	ft_player_anim(t_game *game, int i)
 {
@@ -52,6 +52,7 @@ int	ft_loop_collec(t_game *game)
 		game->sprites.collectibe = game->sprites.pokeouvert;
 	return (0);
 }
+
 int	ft_loop_miaous(t_game *game)
 {
 	if (game->state.loop3 < 5)

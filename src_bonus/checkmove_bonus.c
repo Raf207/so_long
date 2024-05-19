@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checkmove.c                                        :+:      :+:    :+:   */
+/*   checkmove_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:34:14 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/05/19 22:08:56 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/05/20 00:01:08 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../include/so_long_bonus.h"
 
 int	ft_move_ok(t_map *map, int y, int x, t_game *game)
 {

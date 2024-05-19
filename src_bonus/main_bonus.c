@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:38:21 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/05/19 23:55:01 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/05/20 00:01:08 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../include/so_long_bonus.h"
 
 int	ft_checkfile(char *file)
 {
@@ -18,7 +18,7 @@ int	ft_checkfile(char *file)
 		&& (file[ft_strlen(file) - 3] == 'b')
 		&& (file[ft_strlen(file) - 4] == '.'))
 		return (1);
-	else
+	else 
 	{
 		ft_putstr_fd("Error\nWrong type of file\n", 2);
 		exit(EXIT_FAILURE);

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checkpath.c                                        :+:      :+:    :+:   */
+/*   checkpath_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 15:54:24 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/05/19 22:09:02 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/05/20 00:01:08 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../include/so_long_bonus.h"
 
 int	ft_findplayer(char **plan, t_map *map)
 {
