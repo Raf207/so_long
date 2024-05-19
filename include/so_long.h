@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:36:56 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/05/19 14:28:03 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/05/20 00:30:08 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,9 @@ typedef struct s_map
 typedef struct s_p_angle
 {
 	void	*p_front;
-	void	*p_f_m1;
-	void	*p_f_m2;
 	void	*p_back;
-	void	*p_b_m1;
-	void	*p_b_m2;
 	void	*p_left;
-	void	*p_l_m1;
-	void	*p_l_m2;
 	void	*p_right;
-	void	*p_r_m1;
-	void	*p_r_m2;
 }	t_p_angle;
 
 typedef struct s_sprites
@@ -59,22 +51,6 @@ typedef struct s_sprites
 	void	*tree;
 	void	*exit;
 	void	*player;
-	void	*pokeferme;
-	char	angle;
-	void	*num0;
-	void	*num1;
-	void	*num2;
-	void	*num3;
-	void	*num4;
-	void	*num5;
-	void	*num6;
-	void	*num7;
-	void	*num8;
-	void	*num9;
-	void	*miaous;
-	void	*miaous_f;
-	void	*miaous_l;
-	void	*miaous_r;
 	t_p_angle	p_angle;
 }	t_sprites;
 

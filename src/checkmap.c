@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:26:13 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/05/19 22:08:54 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/05/20 00:38:55 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	ft_checkline(char *line, t_map *map)
 			map->player += 1;
 		else if (line[i] == '1')
 			check++;
-		else if (line[i] != '0' && line[i] != 'M')
+		else if (line[i] != '0')
 			return (0);
 	}
 	if (check == map->width)

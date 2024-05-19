@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:34:14 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/05/19 22:08:56 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/05/20 00:36:57 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,22 +36,22 @@ void	ft_swap(t_map *map, int *pos, int keycode, t_sprites *sprites)
 	if (keycode == 2)
 	{
 		*pos += 1;
-		sprites->angle = 'r';
+		sprites->player = sprites->p_angle.p_right;
 	}
 	if (keycode == 0)
 	{
 		*pos += -1;
-		sprites->angle = 'l';
+		sprites->player = sprites->p_angle.p_left;
 	}
 	if (keycode == 13)
 	{
 		*pos += -1;
-		sprites->angle = 'b';
+		sprites->player = sprites->p_angle.p_back;
 	}
 	if (keycode == 1)
 	{
 		*pos += 1;
-		sprites->angle = 'f';
+		sprites->player = sprites->p_angle.p_front;
 	}
 	map->plan[map->p_pos[1]][map->p_pos[0]] = 'P';
 }

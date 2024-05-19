@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:51:46 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/05/20 00:01:08 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/05/20 00:46:52 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int	ft_exit(t_game *game)
 	ft_destroy_img(game);
 	mlx_destroy_window(game->ptr.mlx, game->ptr.win);
 	free(game->ptr.mlx);
-	system("leaks so_long");
 	exit(0);
 }
 

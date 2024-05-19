@@ -14,7 +14,7 @@ OBJ_DIR = obj/
 BONUS_SRC_DIR = src_bonus/
 BONUS_OBJ_DIR = obj_bonus/
 
-SRC_FILES = main checkmap checkpath init display hook checkmove exit animation score
+SRC_FILES = main checkmap checkpath init display hook checkmove exit
 BONUS_SRC_FILES = main checkmap checkpath init display hook checkmove exit animation score
 
 OBJ = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
