@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:26:13 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/05/20 00:01:08 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/05/20 00:51:10 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	ft_checkline(char *line, t_map *map)
 	int	i;
 	int	check;
 
-	if (ft_checkborders(line, map) 
+	if (ft_checkborders(line, map)
 		|| ((int)(ft_strlen(line)) != map->width)
 		|| (line[0] != '1' || line[map->width - 1] != '1'))
 		return (0);

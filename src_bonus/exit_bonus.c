@@ -6,11 +6,18 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:51:46 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/05/20 00:46:52 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/05/20 00:53:42 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long_bonus.h"
+
+void	ft_destroy_img2(t_game *game)
+{
+	mlx_destroy_image(game->ptr.mlx, game->sprites.miaous_f);
+	mlx_destroy_image(game->ptr.mlx, game->sprites.miaous_l);
+	mlx_destroy_image(game->ptr.mlx, game->sprites.miaous_r);
+}
 
 void	ft_destroy_img(t_game *game)
 {
@@ -37,9 +44,7 @@ void	ft_destroy_img(t_game *game)
 	mlx_destroy_image(game->ptr.mlx, game->sprites.num7);
 	mlx_destroy_image(game->ptr.mlx, game->sprites.num8);
 	mlx_destroy_image(game->ptr.mlx, game->sprites.num9);
-	mlx_destroy_image(game->ptr.mlx, game->sprites.miaous_f);
-	mlx_destroy_image(game->ptr.mlx, game->sprites.miaous_l);
-	mlx_destroy_image(game->ptr.mlx, game->sprites.miaous_r);
+	ft_destroy_img2(game);
 }
 
 int	ft_exit(t_game *game)

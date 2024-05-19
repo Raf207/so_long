@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:38:21 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/05/20 00:01:08 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/05/20 00:52:59 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_checkfile(char *file)
 		&& (file[ft_strlen(file) - 3] == 'b')
 		&& (file[ft_strlen(file) - 4] == '.'))
 		return (1);
-	else 
+	else
 	{
 		ft_putstr_fd("Error\nWrong type of file\n", 2);
 		exit(EXIT_FAILURE);

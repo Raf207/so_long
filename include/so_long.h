@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:36:56 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/05/20 00:30:08 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/05/20 00:50:02 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,12 @@ typedef struct s_p_angle
 
 typedef struct s_sprites
 {
-	void	*collectibe;
-	void	*pokeouvert;
-	void	*grass;
-	void	*tree;
-	void	*exit;
-	void	*player;
+	void		*collectibe;
+	void		*pokeouvert;
+	void		*grass;
+	void		*tree;
+	void		*exit;
+	void		*player;
 	t_p_angle	p_angle;
 }	t_sprites;
 
@@ -69,7 +69,7 @@ typedef struct s_gamestate
 	int	loop2;
 	int	loop3;
 	int	img_col;
-	int img_col2;
+	int	img_col2;
 }	t_state;
 
 typedef struct s_game

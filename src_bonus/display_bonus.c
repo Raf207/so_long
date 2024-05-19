@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 13:13:46 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/05/20 00:01:08 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/05/20 00:51:23 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_display_background(t_map *map, t_sprites *sprites, t_ptr *ptr)
 		nb_x = -1;
 		while (++nb_x < map->width)
 		{
-			mlx_put_image_to_window(ptr->mlx, ptr->win, sprites->grass, 
+			mlx_put_image_to_window(ptr->mlx, ptr->win, sprites->grass,
 				nb_x * 64, nb_y * 64);
 		}
 	}

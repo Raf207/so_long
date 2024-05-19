@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 23:59:40 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/05/20 00:00:04 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/05/20 00:50:29 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,28 +53,28 @@ typedef struct s_p_angle
 
 typedef struct s_sprites
 {
-	void	*collectibe;
-	void	*pokeouvert;
-	void	*grass;
-	void	*tree;
-	void	*exit;
-	void	*player;
-	void	*pokeferme;
-	char	angle;
-	void	*num0;
-	void	*num1;
-	void	*num2;
-	void	*num3;
-	void	*num4;
-	void	*num5;
-	void	*num6;
-	void	*num7;
-	void	*num8;
-	void	*num9;
-	void	*miaous;
-	void	*miaous_f;
-	void	*miaous_l;
-	void	*miaous_r;
+	void		*collectibe;
+	void		*pokeouvert;
+	void		*grass;
+	void		*tree;
+	void		*exit;
+	void		*player;
+	void		*pokeferme;
+	char		angle;
+	void		*num0;
+	void		*num1;
+	void		*num2;
+	void		*num3;
+	void		*num4;
+	void		*num5;
+	void		*num6;
+	void		*num7;
+	void		*num8;
+	void		*num9;
+	void		*miaous;
+	void		*miaous_f;
+	void		*miaous_l;
+	void		*miaous_r;
 	t_p_angle	p_angle;
 }	t_sprites;
 
@@ -93,7 +93,7 @@ typedef struct s_gamestate
 	int	loop2;
 	int	loop3;
 	int	img_col;
-	int img_col2;
+	int	img_col2;
 }	t_state;
 
 typedef struct s_game
