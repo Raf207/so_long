@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:34:14 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/05/20 00:36:57 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:26:44 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_move_ok(t_map *map, int y, int x, t_game *game)
 	if (game->state.collected == map->collectible)
 		game->state.completed = 1;
 	game->state.moves += 1;
-	ft_printf("moves : %d \n", game->state.moves);
+	ft_printf("moves : %d\n", game->state.moves);
 	return (1);
 }
 
