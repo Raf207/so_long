@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:34:14 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/05/20 14:26:44 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/05/20 18:30:07 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@ int	ft_move_ok(t_map *map, int y, int x, t_game *game)
 		return (0);
 	else if (map->plan[x][y] == 'C')
 		game->state.collected += 1;
-	else if (map->plan[x][y] == 'E' && game->state.collected)
+	else if (map->plan[x][y] == 'E' && game->state.completed)
+	{
+		ft_printf("moves : %d\n", ++game->state.moves);
 		ft_exit(game);
+	}
 	else if (map->plan[x][y] == 'M')
 		ft_exit(game);
 	if (game->state.collected == map->collectible)

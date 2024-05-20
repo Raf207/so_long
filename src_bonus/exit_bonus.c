@@ -6,7 +6,7 @@
 /*   By: rafnasci <rafnasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:51:46 by rafnasci          #+#    #+#             */
-/*   Updated: 2024/05/20 14:28:41 by rafnasci         ###   ########.fr       */
+/*   Updated: 2024/05/20 18:30:27 by rafnasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ int	ft_exit(t_game *game)
 	ft_freeplan(game->map.plan);
 	ft_destroy_img(game);
 	mlx_destroy_window(game->ptr.mlx, game->ptr.win);
-	ft_printf("moves : %d", ++game->state.moves);
 	free(game->ptr.mlx);
 	exit(0);
 }
